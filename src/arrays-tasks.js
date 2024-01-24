@@ -608,8 +608,22 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  // throw new Error('Not implemented');
+  let headBuffer = [];
+  let tailBuffer = [];
+  let midElem = [];
+  const mid = Math.floor(arr.length / 2);
+  if (arr.length % 2 === 0) {
+    headBuffer = arr.slice(0, mid);
+    tailBuffer = arr.slice(mid);
+  }
+  if (arr.length % 2 !== 0) {
+    headBuffer = arr.slice(0, mid);
+    tailBuffer = arr.slice(mid + 1);
+    midElem = arr.slice(mid, mid + 1);
+  }
+  return tailBuffer.concat(midElem, headBuffer);
 }
 
 module.exports = {
