@@ -78,11 +78,6 @@ function sumArrays(arr1, arr2) {
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
 function findElement(arr, value) {
-  // throw new Error('Not implemented');
-  // return arr.findIndex((el) => {
-  //   return el === value;
-  // });
-  // return arr.map((el, index) => (el === value ? index : -1));
   return arr.indexOf(value);
 }
 
@@ -100,8 +95,16 @@ function findElement(arr, value) {
  *    findAllOccurrences([ null, undefined, null ], null) => 2
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  // throw new Error('Not implemented');
+  let counter = 0;
+  arr.map((el) => {
+    if (el === item) {
+      counter += 1;
+    }
+    return counter;
+  });
+  return counter;
 }
 
 /**
